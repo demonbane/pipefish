@@ -50,7 +50,11 @@ module Pipefish
   end
 
   def key
-    @config[:enkey] || ENV['PIPEFISH_ENKEY']
+    @key ||= (@config[:enkey] || ENV['PIPEFISH_ENKEY'])
+  end
+
+  def key=(enkey)
+    @key = enkey
   end
 
   def encrypt
