@@ -11,7 +11,6 @@ $ echo "this is my text" | pipefish -k somekey
 <encrypted output>
 $ echo <encrypted output> | pipefish -k somekey -d
 this is my text
-$
 ```
 
 Why would I use this?
