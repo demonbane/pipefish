@@ -1,0 +1,3 @@
+* use bcrypt or something similar to hash the key to intentionally slow down decryption
+* some sort of checksum to determine whether the decryption actually succeeded or not
+* get someone who actually understands this stuff to verify if it's good or not :)
