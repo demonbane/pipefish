@@ -40,7 +40,7 @@ module Pipefish
 
     opts.parse!(args)
 
-    send(@action)
+    puts send(@action, STDIN.read.to_s)
     exit
   end
 
@@ -57,13 +57,13 @@ module Pipefish
     @key = enkey
   end
 
-  def encrypt
-    payload = Base64.encode64(STDIN.read)
-    puts Base64.encode64(blowfish.encrypt_string(payload))
+  def encrypt(payload)
+    encoded_text = Base64.encode64(payload)
+    Base64.encode64(blowfish.encrypt_string(encoded_text))
   end
 
-  def decrypt
-    payload = Base64.decode64(STDIN.read)
-    puts Base64.decode64(blowfish.decrypt_string(payload))
+  def decrypt(payload)
+    decoded_text = Base64.decode64(payload)
+    Base64.decode64(blowfish.decrypt_string(decoded_text))
   end
 end
